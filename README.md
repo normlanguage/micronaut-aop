@@ -1,3 +1,5 @@
 # Micronaut AOP
 
-`micronaut.aop@1` 绑定 Micronaut AOP 5.1.13 的 Around Advice、Interceptor Binding 和方法调用上下文常用 API。真实代理示例位于 `sample/sample/aop`。
+[English](README.md) | [简体中文](README.zh-CN.md)
+
+`micronaut.aop@1` binds commonly used around advice, interceptor binding, and method-invocation context APIs from Micronaut AOP 5.1.13. A real proxy example is in `sample/sample/aop`.
