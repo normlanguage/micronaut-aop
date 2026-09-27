@@ -33,12 +33,13 @@ class AuditService {
 }
 
 Void main() {
-  ApplicationContext? context = applicationContextRun()
-  if context != null {
-    AuditService? service = context.getBean(AuditService.class)
-    if service != null {
-      printLine(service.label())
-    }
+  ApplicationContext context = applicationContextRun()!!
+  try {
+    AuditService service = context.getBean(AuditService.class)!!
+    String result = service.label()
+    require(condition: result == "AOP:Norm", message: "Around advice did not intercept the service")
+    printLine(result)
+  } finally {
     context.close()
   }
 }

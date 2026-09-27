@@ -1,0 +1,13 @@
+Module module() {
+  return module(
+    name: "sample.aop",
+    version: 1,
+    exports: [],
+    dependencies: [
+      dependency(repository: "github", name: "micronaut.aop", version: 3),
+      dependency(repository: "github", name: "micronaut.inject", version: 3),
+      dependency(repository: "github", name: "micronaut.inject.processor", version: 4),
+      dependency(repository: "github", name: "jakarta.inject", version: 3)
+    ]
+  )
+}
