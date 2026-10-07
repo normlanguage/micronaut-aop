@@ -1,11 +1,13 @@
 Module module() {
   return module(
     name: "micronaut.aop",
-    version: 4,
+    version: 5,
     dependencies: [
-      dependency(repository: "github", name: "micronaut.core", version: 4),
-      dependency(repository: "github", name: "micronaut.inject", version: 4)
+      dependency(repository: "norm", name: "java.base", version: 1),
+      dependency(repository: "github", name: "micronaut.core", version: 5),
+      dependency(repository: "github", name: "micronaut.inject", version: 5)
     ],
+    exports: ["Around", "AroundProxyTargetConstructorMode", "InterceptorBean", "MethodInterceptor", "InvocationContext", "MethodInvocationContext"],
     binding: jarBinding(
       target: mavenJar(
         group: "io.micronaut",
@@ -13,11 +15,11 @@ Module module() {
         version: "5.1.13", resolution: sha256("137afc1824ea4e86fa952562feaf2f8fc4ff4fe3e6f85727eaa059c6a2570569")
       ),
       api: [
-        jarType(name: "Around", members: ["cacheableLazyTarget", "hotswap", "lazy", "proxyTarget", "proxyTargetMode"]),
-        jarType(name: "Around.ProxyTargetConstructorMode", members: []),
-        jarType(name: "InterceptorBean", members: ["value"]),
+        jarType(name: "io.micronaut.aop.Around", alias: "Around", members: ["cacheableLazyTarget", "hotswap", "lazy", "proxyTarget", "proxyTargetMode"]),
+        jarType(name: "io.micronaut.aop.Around.ProxyTargetConstructorMode", alias: "AroundProxyTargetConstructorMode", members: []),
+        jarType(name: "io.micronaut.aop.InterceptorBean", alias: "InterceptorBean", members: ["value"]),
         jarType(
-          name: "MethodInterceptor",
+          name: "io.micronaut.aop.MethodInterceptor", alias: "MethodInterceptor",
           members: [],
           overloads: [
             jarOverload(
@@ -27,11 +29,11 @@ Module module() {
           ]
         ),
         jarType(
-          name: "InvocationContext",
+          name: "io.micronaut.aop.InvocationContext", alias: "InvocationContext",
           members: [],
           overloads: [jarOverload(name: "proceed", parameterTypes: [])]
         ),
-        jarType(name: "MethodInvocationContext", members: [])
+        jarType(name: "io.micronaut.aop.MethodInvocationContext", alias: "MethodInvocationContext", members: [])
       ]
     )
   )
