@@ -4,10 +4,10 @@ Module module() {
     version: 1,
     exports: [],
     dependencies: [
-      dependency(repository: "github", name: "micronaut.aop", version: 7),
-      dependency(repository: "github", name: "micronaut.inject", version: 12),
-      dependency(repository: "github", name: "micronaut.inject.processor", version: 9),
-      dependency(repository: "github", name: "jakarta.inject", version: 8)
+      dependency(repository: "github", name: "micronaut.aop", version: 8),
+      dependency(repository: "github", name: "micronaut.inject", version: 16),
+      dependency(repository: "github", name: "micronaut.inject.processor", version: 14),
+      dependency(repository: "github", name: "jakarta.inject", version: 11)
     ]
   )
 }
