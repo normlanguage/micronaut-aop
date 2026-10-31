@@ -1,11 +1,11 @@
 Module module() {
   return module(
     name: "micronaut.aop",
-    version: 7,
+    version: 8,
     dependencies: [
       dependency(repository: "norm", name: "java.base", version: 1),
-      dependency(repository: "github", name: "micronaut.core", version: 6),
-      dependency(repository: "github", name: "micronaut.inject", version: 12)
+      dependency(repository: "github", name: "micronaut.core", version: 7),
+      dependency(repository: "github", name: "micronaut.inject", version: 16)
     ],
     exports: ["Around", "AroundProxyTargetConstructorMode", "InterceptorBean", "MethodInterceptor", "InvocationContext", "MethodInvocationContext"],
     binding: jarBinding(
